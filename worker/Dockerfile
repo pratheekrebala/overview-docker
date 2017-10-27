@@ -1,6 +1,11 @@
 FROM overview/overview-base
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update
+
+RUN apt-get install -y software-properties-common python-software-properties
+RUN add-apt-repository ppa:alex-p/tesseract-ocr
+
+RUN apt-get install -y \
   libreoffice \
   tesseract-ocr \
   tesseract-ocr-ara \
